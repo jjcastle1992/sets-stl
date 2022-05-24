@@ -4,6 +4,7 @@
 #include <iostream>
 #include <set>
 #include <algorithm>
+#include <sstream>
 using namespace std;
 
 int main() {
@@ -16,14 +17,20 @@ int main() {
 
     //Create a count-controlled loop that cycles for n number of queries
     for (int i = 0; i < numQueries; i++) {
-
-        //get Input (getline where a = switch options x = value)
         int switchOption = 0;
         int value = 0;
 
-        //validate 1 < a < 3 && 1 < x < 1e9
+        //get Input ( a = switch options x = value) && validate 1 < a < 3 && 1 < x < 1e9
+        cin >> switchOption >> value;
+        if (switchOption < 1 || switchOption > 3 ) {
+            switchOption = 0;
+        }
 
-        //Swtich
+        if (value < 1 || value > 1e9) {
+            value = 0;
+        }
+
+        //Switch
 
             // Option 1, Add element x to set
 
