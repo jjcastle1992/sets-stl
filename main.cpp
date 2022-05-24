@@ -13,7 +13,12 @@ int main() {
     set <int>::iterator setIterator;
     int numQueries = 0;
 
+    cin >> numQueries;
+
     //Data validate numQueries  0 < Q < 1e5
+    if (numQueries < 1 && numQueries > 1e5 ) {
+        numQueries = 0;
+    }
 
     //Create a count-controlled loop that cycles for n number of queries
     for (int i = 0; i < numQueries; i++) {
@@ -35,7 +40,7 @@ int main() {
             case 1:
                 // Option 1, Add element x to set
                 setIterator = mySet.find(value);
-                if (setIterator != mySet.end()) {
+                if (setIterator == mySet.end()) {
                     mySet.insert(value);
                 }
                 break;
