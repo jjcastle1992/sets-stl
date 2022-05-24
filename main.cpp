@@ -9,8 +9,8 @@ using namespace std;
 
 int main() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */
-    set<int> mySet;
-
+    set <int> mySet;
+    set <int>::iterator setIterator;
     int numQueries = 0;
 
     //Data validate numQueries  0 < Q < 1e5
@@ -31,15 +31,35 @@ int main() {
         }
 
         //Switch
-
-            // Option 1, Add element x to set
-
-            // Option 2, Delete Element x from set if exists, or do nothing if x not in set
-
-            //Option 3, Print yes if x is found in set or no if x is not found in set
-
-            //Default, Do nothing
-
+        switch(switchOption) {
+            case 1:
+                // Option 1, Add element x to set
+                setIterator = mySet.find(value);
+                if (setIterator != mySet.end()) {
+                    mySet.insert(value);
+                }
+                break;
+            case 2:
+                // Option 2, Delete Element x from set if exists, or do nothing if x not in set
+                setIterator = mySet.find(value);
+                if (setIterator != mySet.end()) {
+                    mySet.erase(value);
+                }
+                break;
+            case 3:
+                //Option 3, Print yes if x is found in set or no if x is not found in set
+                setIterator = mySet.find(value);
+                if (setIterator != mySet.end()) {
+                    cout << "yes" << endl;
+                }
+                else {
+                    cout << "no" << endl;
+                }
+                break;
+            default:
+                break;
+                //Default, Do nothing
+        }
     }
 
     return 0;
