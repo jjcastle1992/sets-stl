@@ -1,10 +1,7 @@
-#include <cmath>
-#include <cstdio>
 #include <vector>
 #include <iostream>
 #include <set>
 #include <algorithm>
-#include <sstream>
 using namespace std;
 
 int main() {
@@ -55,10 +52,10 @@ int main() {
                 //Option 3, Print yes if x is found in set or no if x is not found in set
                 setIterator = mySet.find(value);
                 if (setIterator != mySet.end()) {
-                    cout << "yes" << endl;
+                    cout << "Yes" << endl;
                 }
                 else {
-                    cout << "no" << endl;
+                    cout << "No" << endl;
                 }
                 break;
             default:
